@@ -1,0 +1,35 @@
+#FLASK SERVER
+install Flask and Flask-CORS using pip
+Install request using pip.
+COPY THE FLASK CODE, backend.py
+{Set up Flask app and CORS to handle cross-origin requests from the React app.
+Define a route to handle POST requests for text summarization.
+Use a mock summarization function for demonstration}
+
+#FORNT_END
+Install Node.js
+install Axios
+CREAT A REACT APP: 
+1. npx create-react-app summereyes
+2. cd summereyes
+3. npm start
+{Create a simple form with a textarea for input and a button for submitting.
+Handle form submission and make an API call to the Flask server.
+Display the summary received from the Flask server.}
+
+Inorder to avoid encountaring CORS issues:
+The CORS issue arises because Flask server and React application are running on different origins (different ports are treated 
+as different origins by the browser). The Flask server must include the proper CORS headers to allow the React application 
+to make requests to it.
+
+Flask application has been modified to include CORS support for all domains on all routes (for development purposes only, 
+for production you should specify the origins):
+"CORS(app, resources={r"/summarize": {"origins": "*"}})"
+
+RUN FLASK,
+python backend.py
+The server will start on http://localhost:5000.
+Replace the src/App.js
+Replace the src/App.css
+npm start
+The app will be available at http://localhost:3000
